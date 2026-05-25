@@ -544,3 +544,250 @@ body {
   font-weight: 600;
 }
 
+/* --- High-End Responsive Media Queries --- */
+
+/* Tablets / iPads (both Portrait & Landscape up to 1024px) */
+@media (max-width: 1024px) {
+  /* Authentication flow adjustments */
+  .auth-container {
+    width: 100% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    flex-direction: column !important;
+    border-radius: 20px !important;
+    margin: 20px auto !important;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12) !important;
+  }
+  
+  .auth-info-pane {
+    display: none !important;
+  }
+  
+  .auth-form-pane {
+    width: 100% !important;
+    padding: 36px 28px !important;
+  }
+
+  .auth-container.register-mode .auth-info-pane {
+    transform: none !important;
+  }
+  
+  .auth-container.register-mode .auth-form-pane {
+    transform: none !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  /* Dashboard Structure Adjustments */
+  .animate-fade-in > div[style*="grid-template-columns: 2fr 1fr"],
+  .animate-fade-in > div[style*="gridTemplateColumns: '2fr 1fr'"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* KPI Stats layout */
+  div[style*="grid-template-columns: 2fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Navbar styling for standard tablets */
+  header.glass-panel {
+    padding: 0 16px !important;
+    margin: 12px 0 !important;
+  }
+}
+
+/* Mobile Devices (Phones up to 768px) */
+@media (max-width: 768px) {
+  /* Global body padding adjustments */
+  body, #root {
+    padding: 0 !important;
+  }
+  
+  #root > div[style*="padding: 0 20px"],
+  #root > div[style*="padding: 0 10px"] {
+    padding: 0 12px !important;
+  }
+
+  /* Navbar adjustments for small screens */
+  header.glass-panel {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 16px !important;
+    gap: 14px !important;
+    margin: 12px 0 !important;
+    min-height: auto !important;
+    text-align: center !important;
+  }
+
+  header.glass-panel > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  header.glass-panel > div:first-child {
+    border-bottom: 1px solid var(--border-color) !important;
+    padding-bottom: 12px !important;
+    justify-content: center !important;
+  }
+
+  header.glass-panel > div:first-child span[style*="border-left"] {
+    border-left: none !important;
+    padding-left: 0 !important;
+    font-size: 0.95rem !important;
+  }
+
+  header.glass-panel > div[style*="text-align: right"] {
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  header.glass-panel .btn-logout {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px !important;
+  }
+
+  /* Dashboard header (Title & Buttons) */
+  .animate-fade-in > div[style*="justify-content: space-between"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+
+  .animate-fade-in > div[style*="justify-content: space-between"] > div[style*="text-align: left"] {
+    text-align: center !important;
+  }
+
+  .animate-fade-in > div[style*="justify-content: space-between"] > div[style*="display: flex"] {
+    width: 100% !important;
+  }
+
+  .animate-fade-in > div[style*="justify-content: space-between"] > div[style*="display: flex"] button {
+    flex: 1 !important;
+  }
+
+  /* KPI Stats layout on phones */
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* General modals (e.g. Delete Confirm Dialog, Incident modal) */
+  div[style*="position: fixed"] > div.glass-panel {
+    width: 95% !important;
+    padding: 20px !important;
+    margin: auto !important;
+  }
+
+  /* Tables responsiveness (allow side scrolling if needed) */
+  .custom-table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* Simulator widget adaptation */
+  .simulator-fab {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+
+  .simulator-drawer {
+    width: calc(100% - 32px) !important;
+    right: 16px !important;
+    left: 16px !important;
+    bottom: 80px !important;
+  }
+}
+
+/* --- Premium Desktop-Only Restriction Warning (< 1024px) --- */
+#desktop-only-warning {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  #root {
+    display: none !important;
+  }
+  
+  body {
+    background-color: #0f172a !important;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(34, 197, 94, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.03) 0px, transparent 50%) !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 24px !important;
+    margin: 0 !important;
+  }
+  
+  #desktop-only-warning {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 460px;
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .warning-box {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 44px 32px;
+    text-align: center;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+  }
+  
+  .warning-icon {
+    color: #22c55e; /* Acciparte green */
+    margin-bottom: 24px;
+    animation: pulseGlow 2s infinite ease-in-out;
+  }
+  
+  .warning-box h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+  }
+  
+  .warning-box p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 14px;
+  }
+  
+  .warning-box .secondary-text {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(34, 197, 94, 0)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4)); }
+}
+
+
+

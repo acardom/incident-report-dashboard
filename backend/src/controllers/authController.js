@@ -53,7 +53,7 @@ const register = async (req, res, next) => {
 
   // 1. Localizar o registrar el espacio de trabajo (Tenant)
   let tenant = await Tenant.findBySlug(tenantSlug.trim().toLowerCase());
-  
+
   if (tenant) {
     // Si el inquilino ya existe, permitir registro exclusivo si pertenece a dominios demo del simulador
     if (!isDemoDomain) {

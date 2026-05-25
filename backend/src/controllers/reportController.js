@@ -55,7 +55,7 @@ const createReport = async (req, res, next) => {
  */
 const getReports = async (req, res, next) => {
   const { tenantId } = req.user;
-  
+
   // Listar registros en la base de datos pertenecientes únicamente al inquilino autenticado
   const reports = await Report.listByTenant(tenantId);
 

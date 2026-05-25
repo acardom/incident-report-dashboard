@@ -39,7 +39,7 @@ const protect = (req, res, next) => {
 
     // Verificar y decodificar el token utilizando la función segura de configuración
     const decoded = verifyToken(token);
-    
+
     // Inyectar la información estructurada del usuario autenticado en la solicitud (req.user)
     // Esto incluye el 'tenantId' que es fundamental para filtrar y delimitar los datos de cada cliente
     req.user = {

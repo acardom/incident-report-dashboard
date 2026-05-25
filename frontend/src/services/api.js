@@ -54,7 +54,7 @@ api.interceptors.response.use(
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       localStorage.removeItem('tenant');
-      
+
       // Forzar la recarga hacia la raíz para inducir la visualización del portal de acceso
       if (window.location.pathname !== '/login') {
         window.location.href = '/login';
